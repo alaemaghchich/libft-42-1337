@@ -8,16 +8,16 @@ int ft_toupper(int c)
     }
     return (c);
 }
-int main()
-{
-    char p[] = "hello world";
-    int i = 0;
-    int j;
-    while (p[i])
-    {
-        j = ft_toupper(p[i]);
-        write(1, &j , 1);
-        i++;
-    }
-    write(1, "\n" , 1);
-}
+// int main()
+// {
+//     char p[] = "hello world";
+//     int i = 0;
+//     int j;
+//     while (p[i])
+//     {
+//         j = ft_toupper(p[i]);
+//         write(1, &j , 1);
+//         i++;
+//     }
+//     write(1, "\n" , 1);
+// }
