@@ -17,5 +17,8 @@ int ft_toupper(int c);
 int ft_tolower(int c);
 int ft_atoi(const char *nptr);
 void ft_bzero(void *s, size_t n);
+char *ft_itoa(int n);
+size_t strlcpy(char *dst, const char *src, size_t dsize);
+size_t strlcat(char *dst, const char *src, size_t dsize);
 
 #endif
