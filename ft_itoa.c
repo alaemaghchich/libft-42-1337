@@ -3,14 +3,9 @@ int ft_intlen(int n)
 {
     int num = n;
     int count;
-    if(num <= 0)
-    {
-        count = 1;
-    }
-    else
-    {
-        count = 0;
-    }
+
+    count = (num <= 0) ? 1 : 0;
+    
     while (num != 0)
     {
         count += 1;
