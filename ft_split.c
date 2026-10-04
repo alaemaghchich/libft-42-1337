@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int countWord(const char *str, char c)
+static int countWord(const char *str, char c)
 {
     int words = 0;
     int i = 0;
