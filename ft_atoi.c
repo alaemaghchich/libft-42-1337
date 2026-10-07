@@ -10,7 +10,7 @@ int ft_atoi(const char *nptr)
         {
             i++;
         }
-        while (nptr[i] == '+' || nptr[i] == '-')
+        if (nptr[i] == '+' || nptr[i] == '-')
         {
             if (nptr[i] == '-')
             {
