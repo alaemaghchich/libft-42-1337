@@ -1,62 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/14 23:31:16 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/10/28 13:20:33 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-static int ft_intlen(int n)
-{
-    int num = n;
-    int count;
 
-    count = (num <= 0) ? 1 : 0;
-    
-    while (num != 0)
-    {
-        count += 1;
-        num /= 10;
-    }
-    return (count);
+static size_t	ft_intlen(int n)
+{
+	int	len;
+
+	if (n <= 0)
+		len = 1;
+	else
+		len = 0;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int len;
-    char *ascii;
-    long nb;
+	long	nb;
+	size_t	len;
+	char	*ascii;
 
-    nb = n;
-    len = ft_intlen(n);
-    ascii =  malloc(sizeof(char) * (len + 1));
-    
-
-    if (!ascii)
-    {
-        return (NULL);
-    }
-
-    ascii[len--] = '\0';
-    if (nb == 0)
-    {
-        ascii[0] = '0';
-    }
-    if (nb < 0)
-    {
-        ascii[0] = '-';
-        nb *= -1;
-    }
-    while (nb != 0)
-    {
-        ascii[len] = (nb % 10) + 48;
-        len--;
-        nb /= 10;
-    }
-    return (ascii);
+	(1) && (nb = n, len = ft_intlen(n));
+	ascii = malloc(sizeof(char) * (len + 1));
+	if (!ascii)
+		return (NULL);
+	ascii[len--] = '\0';
+	if (nb == 0)
+	{
+		ascii[len] = '0';
+		return (ascii);
+	}
+	else if (nb < 0)
+	{
+		nb *= -1;
+		ascii[0] = '-';
+	}
+	while (nb != 0)
+	{
+		ascii[len--] = (nb % 10) + 48;
+		nb /= 10;
+	}
+	return (ascii);
 }
-// int main ()
-// {
-//     char *str = ft_itoa(0);
-//     int i = 0;
-//     while(str[i]  != '\0')
-//     {
-//         write(1, &str[i++] , 1);
-//     }
-//     write (1, "\n" , 1);
-//     free(str);
-//     str = NULL;
-// }

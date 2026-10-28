@@ -1,16 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/13 01:27:20 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/10/24 11:21:25 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-    {
-        return (1);
-    }
-    return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
-// int main ()
-// {
-//     printf("%d\n", ft_isascii(2));
-//     printf("%d\n", ft_isascii('q'));
-//     printf("%d\n", ft_isascii(200));
-// }

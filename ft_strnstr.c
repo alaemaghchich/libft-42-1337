@@ -1,39 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/13 19:50:34 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/10/16 11:14:48 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-    size_t i;
-    size_t j;
-    if (needle[0] == '\0')
-    {
-        return ((char *)haystack);
-    }
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    while (haystack[i] && i < n)
-    {
-        j = 0;
-        while(needle[j] && needle[j] == haystack[j + i] && (i + j) < n)
-        {
-            j++;
-        }
-        if (needle[j] == '\0')
-        {
-            return ((char *)&haystack[i]);
-        }
-        i++;
-    }
-    return (NULL);
+	if (!*little)
+	{
+		return ((char *)big);
+	}
+	i = 0;
+	while (i < n && big[i])
+	{
+		j = 0;
+		while (i + j < n && big[i + j] && big[i + j] == little[j])
+		{
+			j++;
+		}
+		if (!little[j])
+		{
+			return ((char *)&big[i]);
+		}
+		i++;
+	}
+	return (0);
 }
-// int main ()
+// int main()
 // {
-//     char *func = ft_strnstr("hello world salam 3alykom", "salam" ,17);
-//     if(func == NULL)
+//     char str[] = "hello world salam 3aykom ";
+//     char lit[] = "salam";
+//     char *p = ft_strnstr(str, lit, 20);
+//     if (!p)
 //     {
-//         printf("null");
+//         printf("NULL\n");
 //     }
 //     else
 //     {
-//     printf("%s\n", func);
+//         printf("%s\n" , p);
 //     }
 // }

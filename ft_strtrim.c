@@ -1,52 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/14 13:48:43 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/10/23 11:42:05 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_wax_kayen(char s, const char *set)
+static int	wax_kayen(const char s1, const char *set)
 {
-    int i = 0;
-    while(set[i])
-    {
-        if(s == set[i])
-        {
-            return (1);
-        }
-        i++;
-    }
-    return (0);
+	if (ft_strchr(set, s1) == 0)
+		return (0);
+	return (1);
 }
-char *ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    int i;
-    int len;
-    int size;
-    char *trim;
+	size_t	start;
+	size_t	end;
+	size_t	i;
+	char	*trim;
 
-    if(!s1 || !set)
-    {
-        return (NULL);
-    }
-
-    i = 0;
-    len = ft_strlen(s1) - 1;
-
-        while(i <= len && ft_wax_kayen(s1[i], set) == 1)
-        {
-            i++;
-        }
-        while(i <= len && ft_wax_kayen(s1[len], set) == 1)
-        {
-            len--;
-        }
-        if (i > len)
-        {
-            return (ft_substr(s1, 0, 0));
-        }
-
-    size = (len + 1) - i;
-    trim = ft_substr(s1, i, size);
-    return (trim);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (s1[start] && wax_kayen(s1[start], set) == 1)
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && wax_kayen(s1[end - 1], set) == 1)
+		end--;
+	trim = malloc(sizeof(char) * ((end - start) + 1));
+	if (!trim)
+		return (NULL);
+	i = 0;
+	while (start < end)
+		trim[i++] = s1[start++];
+	trim[i] = '\0';
+	return (trim);
 }
-// int main()
+// int	main(void)
 // {
-//     char *p = ft_strtrim("123321231h4ello world3213", "123");
-//     ft_putstr_fd(p, 1);
+// 	char	str[] = "abc hello world bca";
+// 	char	*p;
+
+// 	p = ft_strtrim(str, "abc ");
+// 	printf("%s\n", p);
 // }

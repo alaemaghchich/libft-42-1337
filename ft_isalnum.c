@@ -1,22 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/13 01:27:13 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/10/20 10:39:32 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= '0' && c <= '9') 
-    || (c >= 'a' && c <= 'z') 
-    || (c >= 'A' && c <= 'Z'))
-    {
-        return (1);
-    }
-    return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
-// #include <stdio.h>
-// int main()
-// {
-//     printf("%d\n" , ft_isalnum('a'));return 1
-//     printf("%d\n" , ft_isalnum('B'));return 1
-//     printf("%d\n" , ft_isalnum('3'));return 1
-//     printf("%d\n" , ft_isalnum('#'));return 0
-//     printf("%d\n" , ft_isalnum('@'));return 0
-//     printf("%d\n" , ft_isalnum(6));return 0
-// }

@@ -1,32 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/13 21:57:23 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/10/25 07:12:56 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *n)
 {
-    int i = 0;
-    int sign = 1;
-    int res = 0;
+	int	i;
+	int	sign;
+	int	res;
 
-        while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-        {
-            i++;
-        }
-        if (nptr[i] == '+' || nptr[i] == '-')
-        {
-            if (nptr[i] == '-')
-            {
-                sign *= -1;
-            }
-            i++;
-        }
-        while(nptr[i] >= '0' && nptr[i] <= '9')
-        {
-            res = res * 10 + (nptr[i++] - 48);
-        }
-    return (sign * res);
+	(1) && (i = 0, sign = 1, res = 0);
+	while ((n[i] >= 9 && n[i] <= 13) || n[i] == ' ')
+		i++;
+	if (n[i] == '+' || n[i] == '-')
+	{
+		if (n[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (n[i] >= '0' && n[i] <= '9')
+		res = res * 10 + (n[i++] - 48);
+	return (sign * res);
 }
-// int main()
-// {
-//     char n[] = "   ----++1337";
-//     int c = ft_atoi(n);
-//     printf("%d \n" , c);
-// }
