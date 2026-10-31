@@ -23,7 +23,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

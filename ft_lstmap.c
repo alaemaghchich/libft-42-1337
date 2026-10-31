@@ -35,48 +35,48 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_head);
 }
-void	*edit(void *content)
-{
-	char	*str;
-	int		i;
+// void	*edit(void *content)
+// {
+// 	char	*str;
+// 	int		i;
 
-	if (!content)
-		return (NULL);
-	str = (char *)content;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-	return (content);
-}
-int main (int ac , char **av)
-{
-    t_list *head = NULL;
-    char *content;
-    t_list *new;
-    int i = 0;
-    while (i < ac)
-    {
-        content = av[i];
-        new = ft_lstnew(content);
-        ft_lstadd_back(&head, new);
-        i++;
-    }
-    i = 0;
-    t_list *tmp  = head;
-    while(tmp)
-    {
-        printf("%s\n" , (char *)tmp->content);
-        tmp = tmp->next;
-    }
-    printf("==============================================\n");
-    t_list *p = ft_lstmap(head, edit, free);
-    while (p)
-    {
-        printf("%s\n", (char *)p->content);
-        p = p->next;
-    }
-}
+// 	if (!content)
+// 		return (NULL);
+// 	str = (char *)content;
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		if (str[i] >= 'a' && str[i] <= 'z')
+// 			str[i] -= 32;
+// 		i++;
+// 	}
+// 	return (content);
+// }
+// int main (int ac , char **av)
+// {
+//     t_list *head = NULL;
+//     char *content;
+//     t_list *new;
+//     int i = 0;
+//     while (i < ac)
+//     {
+//         content = av[i];
+//         new = ft_lstnew(content);
+//         ft_lstadd_back(&head, new);
+//         i++;
+//     }
+//     i = 0;
+//     t_list *tmp  = head;
+//     while(tmp)
+//     {
+//         printf("%s\n" , (char *)tmp->content);
+//         tmp = tmp->next;
+//     }
+//     printf("==============================================\n");
+//     t_list *p = ft_lstmap(head, edit, free);
+//     while (p)
+//     {
+//         printf("%s\n", (char *)p->content);
+//         p = p->next;
+//     }
+// }
