@@ -31,6 +31,11 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
+run: all clean
+	@clear
+	@$(CC) main.c $(NAME) -o run
+	@./run
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re run
