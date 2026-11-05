@@ -1,3 +1,32 @@
+# ==============================================================================
+# Makefile Overview & Logic
+# ==============================================================================
+# A Makefile is an automation tool that simplifies and manages the compilation
+# process of a C project.
+#
+# Why use a Makefile?
+# --------------------
+# In large projects (e.g., 100+ .c files), manually running `gcc` on all files
+# for every minor change is inefficient. 
+#
+# `make` solves this using incremental compilation:
+# - It compares the modification timestamp of each `.c` file against its `.o` file.
+# - If a `.c` file is newer than its `.o` file, `make` recompiles ONLY that file.
+#
+# Structure of a Rule:
+# --------------------
+#   target: dependencies
+#   <TAB> recipe
+#
+# 1. Target       : Output file to create (e.g., library or executable).
+# 2. Dependencies : Prerequisites needed before creating the target.
+# 3. Recipe       : Shell command executed to build the target (must use TAB).
+# ==============================================================================
+
+#libft.a: ft_strlen.o ft_memcpy.o
+#<tab>ar rcs libft.a ft_strlen.o ft_memcpy.o
+#===============================================================================
+
 NAME	= libft.a
 
 SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
