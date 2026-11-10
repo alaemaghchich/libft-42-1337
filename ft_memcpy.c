@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 15:54:38 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/24 02:50:43 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:19:09 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-// int	main(void)
-// {
-// 	char s[] = "hello";
-// 	ft_memcpy(s + 1, s, 5);
-// 	printf("%s\n", s);
-// 	return (0);
-// }

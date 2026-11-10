@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 12:56:35 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/24 02:56:41 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:20:51 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-// int main ()
-// {
-//     char c = 'a';
-//     printf("%i\n", ft_isalpha(c));
-// }

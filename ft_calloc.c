@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 22:20:54 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/25 07:54:24 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/06 00:01:35 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(call, total);
 	return (call);
 }
-// int main ()
-// {
-//     int  *p = ft_calloc(10 , sizeof(int));
-//     int i = 0;
-//     while (i < 10)
-//     {
-//         printf("%i ", p[i++]);
-//     }
-//     free(p);
-//     p = NULL;
-// }

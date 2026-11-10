@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 01:26:08 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/24 02:50:35 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:40:28 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	d = dest;
 	s = src;
-	if (d > s && s + n >= d)
+	if (d > s)
 	{
 		while (n-- > 0)
 		{
@@ -38,14 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-// int	main(void)
-// {
-// 	char	test[] = {97, 108, 97, 101, 90};
-
-// 	ft_memmove(test + 1, test, 4);
-// 	printf("%s ", test);
-// }
-
-// src = abcdef
-// dst = bcdef
-// res =

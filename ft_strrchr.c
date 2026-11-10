@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 12:55:42 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/25 07:48:29 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:08:47 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen(s);
 	while (1)
 	{
-		if (s[len] == (unsigned char)c)
+		if (s[len] == (char)c)
 			return ((char *)&s[len]);
 		if (len == 0)
 			break ;
@@ -31,16 +31,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
-// int main ()
-// {
-//     char str[] = "";
-//     int c = 'h';
-//     char *p = ft_strrchr(str, c);
-//     if (!p)
-//     {
-//         printf("NULL");
-//         return (0);
-//     }
-//         printf("%s\n", p);
-// }

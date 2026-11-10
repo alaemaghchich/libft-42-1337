@@ -6,7 +6,7 @@
 /*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 10:23:22 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/14 13:32:30 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:14:26 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-// int main()
-// {
-//     char str[] = "By: amaghchi <amaghchi@student.1337.ma>";
-//     char *p = ft_strdup(str);
-//     printf("%s\n", p);
-// }

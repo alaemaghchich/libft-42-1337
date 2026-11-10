@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 19:16:19 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/24 02:50:53 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:19:16 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-// int	main(void)
-// {
-// 	int s = 97;
-// 	char s2[] = "blae";
-// 	int t = ft_memcmp(&s, s2, 1);
-// 	printf("%d\n", t);
-// }

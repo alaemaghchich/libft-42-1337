@@ -26,7 +26,6 @@
 #libft.a: ft_strlen.o ft_memcpy.o
 #<tab>ar rcs libft.a ft_strlen.o ft_memcpy.o
 #===============================================================================
-
 NAME = libft.a
 
 SRCS = ft_isalpha.c \

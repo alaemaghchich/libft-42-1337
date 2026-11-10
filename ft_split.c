@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 15:20:09 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/25 04:02:06 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/06 01:44:43 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,20 @@ static size_t	count_words(char const *s, char c)
 	return (words);
 }
 
-static void	freedom(char **split, int i)
+static void	freedom(char **split, size_t i)
 {
 	while (i)
-	{
 		free(split[--i]);
-	}
 	free(split);
-	split = NULL;
 }
 
-static size_t	fill(char **split, char const *s, char c)
+static size_t	fill(char **split, char const *s, char c, int *error)
 {
 	size_t	start;
 	size_t	end;
-	size_t	len;
 	size_t	i;
 
-	(1) && (start = 0, i = 0);
+	(1) && (start = 0, i = 0, *error = 0);
 	while (s[start])
 	{
 		while (s[start] && s[start] == c)
@@ -55,12 +51,14 @@ static size_t	fill(char **split, char const *s, char c)
 		end = start;
 		while (s[end] && s[end] != c)
 			end++;
-		len = end - start;
-		split[i] = ft_substr(s, start, len);
+		split[i] = ft_substr(s, start, (end - start));
 		if (!split[i])
+		{
 			freedom(split, i);
-		start = end;
-		i++;
+			*error = 1;
+			return (0);
+		}
+		(1) && (start = end, i++);
 	}
 	return (i);
 }
@@ -69,32 +67,16 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	char	**split;
+	int		error;
 
+	if (!s)
+		return (NULL);
 	split = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!split)
 		return (NULL);
-	i = fill(split, s, c);
+	i = fill(split, s, c, &error);
+	if (error)
+		return (NULL);
 	split[i] = NULL;
 	return (split);
 }
-// int	main(void)
-// {
-// 	char s[] = "salam 3alykom hello world ";
-// 	char **split = ft_split(s, ' ');
-
-// 	int i = 0;
-// 	int j;
-
-// 	while (split[i])
-// 	{
-// 		j = 0;
-// 		while (split[i][j])
-// 		{
-// 			write(1, &split[i][j], 1);
-// 			j++;
-// 		}
-// 		write(1, "\n", 1);
-// 		i++;
-// 	}
-// 	return (0);
-// }

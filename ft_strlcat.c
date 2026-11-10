@@ -6,7 +6,7 @@
 /*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 10:14:45 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/13 10:57:31 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 09:22:18 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[len_d + i] = src[i];
 		i++;
 	}
-	dst[len_d + i] = 0;
+	dst[len_d + i] = '\0';
 	return (len_d + len_s);
 }

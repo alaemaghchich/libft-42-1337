@@ -6,7 +6,7 @@
 /*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 19:50:34 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/16 11:14:48 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:13:43 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	}
 	return (0);
 }
-// int main()
-// {
-//     char str[] = "hello world salam 3aykom ";
-//     char lit[] = "salam";
-//     char *p = ft_strnstr(str, lit, 20);
-//     if (!p)
-//     {
-//         printf("NULL\n");
-//     }
-//     else
-//     {
-//         printf("%s\n" , p);
-//     }
-// }

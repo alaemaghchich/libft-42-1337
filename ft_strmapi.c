@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 20:26:24 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/23 11:34:10 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:14:08 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	mapi[i] = '\0';
 	return (mapi);
 }
-// static char cypte(unsigned int i, char c)
-// {
-//     (void)i;
-//     return ((c % 2 == 0) ? c = '*' : c);
-// }
-// static char	rm_spasece(unsigned int i, char c)
-// {
-// 	(void)i;
-// 	return ((c == ' ') ? c = 127 : c);
-// }
-// int	main(void)
-// {
-// 	char str[] = "h e  ll  o w o r l d";
-// 	char *p = ft_strmapi(str, rm_spasece);
-// 	ft_putstr_fd(p, 1);
-// }

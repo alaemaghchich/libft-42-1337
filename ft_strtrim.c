@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 13:48:43 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/10/23 11:42:05 by amaghchi         ###   ########.fr       */
+/*   Updated: 2026/11/05 21:26:22 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	wax_kayen(const char s1, const char *set)
+static int	is_set(const char s1, const char *set)
 {
 	if (ft_strchr(set, s1) == 0)
 		return (0);
@@ -29,10 +29,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	while (s1[start] && wax_kayen(s1[start], set) == 1)
+	while (s1[start] && is_set(s1[start], set) == 1)
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && wax_kayen(s1[end - 1], set) == 1)
+	while (end > start && is_set(s1[end - 1], set) == 1)
 		end--;
 	trim = malloc(sizeof(char) * ((end - start) + 1));
 	if (!trim)
@@ -43,11 +43,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim[i] = '\0';
 	return (trim);
 }
-// int	main(void)
-// {
-// 	char	str[] = "abc hello world bca";
-// 	char	*p;
-
-// 	p = ft_strtrim(str, "abc ");
-// 	printf("%s\n", p);
-// }

@@ -1,120 +1,96 @@
+*This project has been created as part of the 42 curriculum by amaghchi.*
+
 # Libft
 
-**My own implementation of the C standard library functions, built from scratch as part of the 42 School curriculum.**
+## Description
 
-Libft is my first major C project. The goal is to recreate essential functions from the standard C library while developing a deeper understanding of memory management, pointers, data structures, and low-level programming.
+Libft is a project from the 42 curriculum. Its goal is to create a personal C library by reimplementing several standard C library functions and developing additional utility functions.
 
-## 📚 Project Overview
+This project provides an opportunity to understand how C works at a lower level, especially memory management, pointers, strings, and data structures.
 
-This project covers several fundamental areas of C programming:
+The result is a reusable static library called `libft.a`, which can be used in future C projects.
 
-- **Character classification and conversion**
-- **Memory manipulation**
-- **String manipulation**
-- **Memory allocation**
-- **File descriptor operations**
-- **Linked lists (Bonus)**
+## Instructions
 
-## 🛠️ Implemented Functions
+### Compilation
 
-### 1. Character Checks & Conversion
-
-| Function | Description |
-|---|---|
-| `ft_isalpha` | Checks whether a character is alphabetic. |
-| `ft_isdigit` | Checks whether a character is a digit. |
-| `ft_isalnum` | Checks whether a character is alphanumeric. |
-| `ft_isascii` | Checks whether a character belongs to the ASCII set. |
-| `ft_isprint` | Checks whether a character is printable. |
-| `ft_toupper` | Converts a lowercase character to uppercase. |
-| `ft_tolower` | Converts an uppercase character to lowercase. |
-
-### 2. Memory Manipulation
-
-| Function | Description |
-|---|---|
-| `ft_memset` | Fills a memory block with a specific value. |
-| `ft_bzero` | Sets a memory block to zero. |
-| `ft_memcpy` | Copies memory between non-overlapping regions. |
-| `ft_memmove` | Copies memory safely, including overlapping regions. |
-| `ft_memchr` | Searches for a byte in a memory block. |
-| `ft_memcmp` | Compares two memory blocks. |
-| `ft_calloc` | Allocates zero-initialized memory. |
-
-### 3. String Manipulation
-
-| Function | Description |
-|---|---|
-| `ft_strlen` | Calculates string length. |
-| `ft_strchr` | Finds the first occurrence of a character. |
-| `ft_strrchr` | Finds the last occurrence of a character. |
-| `ft_strncmp` | Compares two strings up to a specified length. |
-| `ft_strlcpy` | Copies a string with size limitation. |
-| `ft_strlcat` | Concatenates strings with size limitation. |
-| `ft_strnstr` | Searches for a substring within a limited length. |
-| `ft_strdup` | Duplicates a string using dynamic allocation. |
-| `ft_substr` | Extracts a substring. |
-| `ft_strjoin` | Concatenates two strings into a new allocation. |
-| `ft_strtrim` | Removes specified characters from both ends. |
-| `ft_split` | Splits a string using a delimiter. |
-| `ft_strmapi` | Creates a new string by applying a function to each character. |
-| `ft_striteri` | Applies a function to each character of a string. |
-| `ft_atoi` | Converts a string into an integer. |
-| `ft_itoa` | Converts an integer into a string. |
-
-### 4. File Descriptor Operations
-
-| Function | Description |
-|---|---|
-| `ft_putchar_fd` | Writes a character to a file descriptor. |
-| `ft_putstr_fd` | Writes a string to a file descriptor. |
-| `ft_putendl_fd` | Writes a string followed by a newline. |
-| `ft_putnbr_fd` | Writes an integer to a file descriptor. |
-
-### 5. Linked Lists
-
-| Function | Description |
-|---|---|
-| `ft_lstnew` | Creates a new linked-list node. |
-| `ft_lstadd_front` | Adds a node to the beginning of a list. |
-| `ft_lstadd_back` | Adds a node to the end of a list. |
-| `ft_lstsize` | Counts the number of nodes in a list. |
-| `ft_lstlast` | Returns the last node of a list. |
-
-## ⚙️ Compilation
-
-The project includes a Makefile to simplify compilation.
+To compile the library, run:
 
 ```bash
-make        # Compile the library
-make clean  # Remove object files
-make fclean # Remove object files and library
-make re     # Recompile everything
+make
 ```
 
-The compilation uses:
+Available Makefile rules:
 
-- `-Wall`
-- `-Wextra`
-- `-Werror`
+- `make`: Compiles the library.
+- `make clean`: Removes object files.
+- `make fclean`: Removes object files and the library.
+- `make re`: Recompiles the entire library.
 
-## 📦 Library
+### Usage
 
-The project generates a static library:
+Include the header file in your C program:
 
-`libft.a`
+```c
+#include "libft.h"
+```
 
-To use it in another C project, include `libft.h` and link against the library during compilation.
+Compile your program with the library:
 
-## 🎯 What I'm Learning
+```bash
+cc main.c libft.a -o program
+```
 
-Through this project, I'm strengthening my understanding of:
+## Library Description
 
-- Pointers and pointer arithmetic.
-- Stack vs. heap memory.
-- Dynamic memory allocation and deallocation.
-- Buffer manipulation and memory safety.
-- String processing and algorithms.
-- Function pointers and callbacks.
-- Linked lists and basic data structures.
-- Building static libraries with Makefiles.
+The library is organized into several categories:
+
+### 1. Character Functions
+
+Functions for checking and converting characters:
+
+`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`.
+
+### 2. Memory Functions
+
+Functions for manipulating memory blocks, including copying, comparing, filling, and allocating memory:
+
+`ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`.
+
+### 3. String Functions
+
+Functions for measuring, searching, comparing, copying, and manipulating strings:
+
+`ft_strlen`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strlcpy`, `ft_strlcat`, `ft_strnstr`, `ft_strdup`.
+
+### 4. Additional Functions
+
+Utility functions for creating and manipulating strings and converting data:
+
+`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`.
+
+### 5. File Descriptor Functions
+
+Functions for writing characters, strings, and numbers to a specified file descriptor:
+
+`ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`.
+
+### 6. Linked List Functions
+
+Functions for creating, managing, and manipulating singly linked lists using the `t_list` structure.
+
+Each node contains a pointer to its content and a pointer to the next node.
+
+`ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`.
+
+## Resources
+
+The following resources were used during the development and learning process:
+
+- **Linux Man Pages:** Understanding standard C functions and their behavior.
+- **Stack Overflow:** Finding explanations and discussing programming problems.
+- **YouTube:** Following tutorials and understanding C programming concepts.
+- **NotebookLM:** Reviewing and organizing technical information.
+- **LLMs:** debugging errors, and reviewing programming concepts.
+
+AI tools were used as learning and assistance tools, not as a replacement for understanding the code. Implementation, testing, debugging, and final decisions were carried out by the student.
