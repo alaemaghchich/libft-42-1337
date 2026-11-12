@@ -2,7 +2,9 @@
 
 # Libft
 <p align="center">
-  <img width="150" height="150" alt="libfte" src="https://github.com/user-attachments/assets/0894142d-440e-4a24-84f3-a5fa13ef7937" />
+  <a href="https://github.com/alaemaghchich/libft-42-1337" target="_blank">
+    <img width="150" height="150" alt="libfte" src="https://github.com/user-attachments/assets/0894142d-440e-4a24-84f3-a5fa13ef7937" />
+  </a>
 </p>
 <img width="1403" height="685" alt="image" src="https://github.com/user-attachments/assets/ba5a620f-6f04-4cbe-811e-e93cc4406390" />
 
